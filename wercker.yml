@@ -16,12 +16,12 @@ box: node
 
     # - mongo
     # http://devcenter.wercker.com/docs/services/mongodb.html
-dev: 
-  steps:
-    - npm-install
-    - internal/watch:
-        code: node app.js
-        reload: true
+# dev: 
+#  steps:
+#    - npm-install
+#    - internal/watch:
+#        code: node app.js
+#        reload: true
 
 build:
   # The steps that will be executed on build
@@ -34,22 +34,22 @@ build:
 
     # A custom script step, name value is used in the UI
     # and the code value contains the command that get executed
-    - script:
-        name: echo nodejs information
-        code: |
-          echo "node version $(node -v) running"
-          echo "npm version $(npm -v) running"
+#    - script:
+#        name: echo nodejs information
+#        code: |
+#          echo "node version $(node -v) running"
+#          echo "npm version $(npm -v) running"
 
     # Configure npm and bower to allow root scripts
-    - script:
-        name: enable root/sudo for npm/bower
-        code: |
+#    - script:
+#        name: enable root/sudo for npm/bower
+#        code: |
           # https://docs.npmjs.com/misc/config#unsafe-perm
-          npm config set unsafe-perm true
+#          npm config set unsafe-perm true
           # https://github.com/bower/bower/issues/1752#issuecomment-113455403
-          echo "{\"allow_root\": true}" > ~/.bowerrc
+#          echo "{\"allow_root\": true}" > ~/.bowerrc
 
     # A step that executes `npm install` command
-    - npm-install@1.1.4
+    - npm-install
     # A step that executes `npm test` command
-    - npm-test@0.0.3
+    - npm-test
