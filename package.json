@@ -1,7 +1,7 @@
 {
   "name": "testwerker",
   "version": "1.0.0",
-  "description": "",
+  "description": "testwerker",
   "main": "server.js",
   "devDependencies": {},
   "scripts": {
